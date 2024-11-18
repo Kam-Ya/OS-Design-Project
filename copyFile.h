@@ -1,3 +1,6 @@
+#ifndef COPYFILE_H
+#define COPYFILE_H
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -28,3 +31,5 @@ void copyFile(){
     fclose(fptr);
     fclose(fptrCopy); 
 }
+
+#endif

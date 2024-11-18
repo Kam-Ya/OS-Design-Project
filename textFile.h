@@ -1,3 +1,6 @@
+#ifndef TEXTFILE_H
+#define TEXTFILE_H
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -117,3 +120,5 @@ void showContent(){
     }
 
 }
+
+#endif

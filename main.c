@@ -9,9 +9,10 @@ while(1){
     puts("Welcome to the file management system");
     scanf("%d",&menu);
     if (menu==1){
-createFile();}
+        createFile();
+    }
     else if (menu==2){
-copyFile();
+        copyFile();
     }
 
     }

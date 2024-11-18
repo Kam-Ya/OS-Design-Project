@@ -1,3 +1,6 @@
+#ifndef CREATEFILE_H
+#define CREATEFILE_H
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -25,3 +28,5 @@ char fileName[50];
         fclose(fptr);
     }
 }
+
+#endif
