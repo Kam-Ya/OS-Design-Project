@@ -3,13 +3,19 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <errno.h>
+#include <copyFile.h>
 
-void move(char *file, char *dest) {
-    if (rename(file, dest)) {
-        return;
-    } else {
-        printf("Error: %d\n", errno);
-    }
+void move() {
+    char *from;
+    char *to;
+
+    printf("Enter the name of the file you want to move: ");
+    scanf("%s", &from);
+
+    printf("Enter the name of the files destination: ");
+    scanf("%s", &to);
+
+    copyFile(from, to);
 }
 
 #endif
