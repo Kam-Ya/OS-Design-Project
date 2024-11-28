@@ -16,6 +16,7 @@ void move() {
     scanf("%s", &to);
 
     copyFile(from, to);
+    remove(from);
 }
 
 #endif
