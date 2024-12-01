@@ -48,30 +48,38 @@ void insertText(){
     fptr = fopen(fileName, "r");
 
     if (fptr){
-        fseek(fptr, position, SEEK_SET);
-
         FILE *temp = fopen("callmeIshmael.txt", "w+");
-        while(fgets(readchar, 50, fptr)) {
-            fprintf(temp, "%s", readchar);
-        }
-
+        FILE *temp2 = fopen("Warendures.txt", "w+");
+        fgets(readchar, position, fptr);
+        fprintf(temp, "%s", readchar);
         fclose(temp);
+
+        while (fgets(readchar, 50, fptr)) {
+            fprintf(temp2, "%s", readchar);
+        }
+        
+        fclose(temp2);
         fclose(fptr);
         fptr = fopen(fileName, "w");
 
-        fseek(fptr, position, SEEK_SET);
-        fprintf(fptr, "%s", insert);
+        fprintf(fptr, "%s", "");
         fclose(fptr);
         fptr = fopen(fileName, "a");
         
+        temp2 = fopen("Warendures.txt", "r");
         temp = fopen("callmeIshmael.txt", "r");
         while (fgets(readchar, 50, temp)) {
+            fprintf(fptr, "%s", readchar);
+        }
+        fprintf(fptr, "%s", insert);
+        while (fgets(readchar, 50, temp2)) {
             fprintf(fptr, "%s", readchar);
         }
 
         fclose(fptr);
         fclose(temp);
         remove("callmeIshmael.txt");
+        remove("Warendures.txt");
     
     }
     else{
