@@ -7,18 +7,26 @@
 
 void copyFile(){
     char fileName[50];
-    char copyFile[58];
-    char readChar[256];
+    char copyFile[50];
+    char *temp;
+    char *readChar;
     int charsInLine=256;
     FILE* fptr;
     FILE* fptrCopy;
 
-    puts("Please type the name of your file");
-    snprintf(copyFile, sizeof(copyFile), "Copy of %s", fileName);
+
+    printf("Please type the name of file to be copied: ");
+    scanf("%s", fileName);
+
+    printf("Please enter name of destination file: ");
+    scanf("%s", copyFile);
+
+    printf("%s, %s", fileName, copyFile);
+
 
     fptr = fopen(fileName, "r");
 
-    if (fptr){
+    if (fptr != NULL){
         puts("Copying file");
         fptrCopy = fopen(copyFile, "w");
         while(fgets(readChar, charsInLine, fptr)){

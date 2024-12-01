@@ -19,7 +19,7 @@ void appendText(){
     FILE* fptr;
     puts("You have selected to Append Text");
     puts("Please type the name of your file");
-    scanf("%s",fileName);
+    fgets(fileName, sizeof(fileName), stdin);
 
     fptr = fopen(fileName, "r");
 
@@ -27,7 +27,7 @@ void appendText(){
         fclose(fptr);
         fptr = fopen(fileName, "a");
         puts("Please add up to 1024 characters to append, press enter to finish");
-        scanf("%s",addText);
+        fgets(addText, sizeof(addText), stdin);
         fprintf(fptr, addText);
     }
     else{
@@ -43,7 +43,7 @@ void insertText(){
     puts("You have selected to Insert Text");
 
     puts("Please type the name of your file");
-    scanf("%s",fileName);
+    fgets(fileName, sizeof(fileName), stdin);
 
     fptr = fopen(fileName, "r");
 
@@ -64,7 +64,7 @@ void removeText(){
     puts("You have selected to Remove Text");
 
     puts("Please type the name of your file");
-    scanf("%s",fileName);
+    fgets(fileName, sizeof(fileName), stdin);
 
     fptr = fopen(fileName, "r");
 
@@ -89,7 +89,7 @@ void showContent(){
     puts("You have selected to Show Content");
 
     puts("Please type the name of your file");
-    scanf("%s",fileName);
+    fgets(fileName, sizeof(fileName), stdin);
 
     fptr = fopen(fileName, "r");
 
@@ -110,7 +110,7 @@ void showContent(){
     }
      puts("-------------");
         puts("Continue? (Y/N)");
-        scanf("%c",cont);
+        scanf("%c", &cont);
         if(cont=='Y'){}
         else{break;}
     }

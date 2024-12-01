@@ -9,11 +9,11 @@ void renameFile(){
     char oldName[58];
     char newName[50];
 
-    printf("\nWhat is the old name of the file:");
-    scanf("%s",oldName);
+    printf("\nWhat is the old name of the file: ");
+    scanf("%s", oldName);
 
-    printf("\nWhat is the new name of the file:");
-    scanf("%s",newName);
+    printf("\nWhat is the new name of the file: ");
+    scanf("%s", newName);
 
     if(rename(oldName,newName)==0){
         printf("\nFile renamed to %s",newName);

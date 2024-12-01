@@ -1,2 +1,5 @@
 *.vscode
 *.dSYM
+/test
+*.txt
+main

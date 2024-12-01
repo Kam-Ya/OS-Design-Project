@@ -9,12 +9,12 @@
 void deleteFile(){
     char fileName[50];
 
-    printf("\nWhat is the name of the file to delete:");
-    scanf("%s",fileName);
+    printf("\nWhat is the name of the file to delete: ");
+    scanf("%s", fileName);
 
     // checking for success or which error occured
     if(remove(fileName)==0){
-        printf("\n%s successfully removed");
+        printf("\n%s successfully removed", fileName);
     } else if (errno == ENOENT) {
         printf("\nFile does not exist");
     } else if (errno == EACCES) {

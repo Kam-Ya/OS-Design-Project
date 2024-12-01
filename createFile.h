@@ -9,8 +9,8 @@ void createFile(){
 char fileName[50];
 
     
-    puts("What is the name of your file?");
-    scanf("%s",fileName);
+    puts("What is the name of your file: ");
+    scanf("%s", fileName);
     // file pointer
     FILE* fptr;
 
@@ -27,6 +27,7 @@ char fileName[50];
         printf("\nThe file is created successfully with name %s \n",fileName);
         fclose(fptr);
     }
+    scanf("%s", fileName);
 }
 
 #endif
