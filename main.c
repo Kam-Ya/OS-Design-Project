@@ -10,7 +10,7 @@
 int main(){
     int menu;
 while(1){
-    printf("Welcome to the file management system\nPlease enter what command you want to run.\n1 - createFile\n2 - copyFile\n3 - deleteFile\n4 - moveFile\n5- renameFile\n");
+    printf("Welcome to the file management system\nPlease enter what command you want to run.\n1 - createFile\n2 - copyFile\n3 - deleteFile\n4 - moveFile\n5 - renameFile\n6 - to menipulate a text file\n7 - to exit\n");
     scanf("%d",&menu);
     if (menu==1){
         createFile();
@@ -24,6 +24,11 @@ while(1){
     } else if(menu == 5) {
         renameFile();
     }
-
+    else if (menu == 6) {
+        textFiles();
+    }
+    else if (menu == 7) {
+        exit(0);
+    }
     }
 }
