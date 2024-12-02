@@ -30,5 +30,9 @@ while(1){
     else if (menu == 7) {
         exit(0);
     }
+    else {
+        printf("Please Enter a Valid Input")
+    }
+
     }
 }
