@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "getTextFileHelp.h"
 
 void appendText(){
     char fileName[50];
@@ -143,7 +144,8 @@ void textFiles(){
     puts("2. Insert Text in File");
     puts("3. Remove Text from File");
     puts("4. Show Content in File");
-    puts("5. Exit to main menu");
+    puts("5. Get help for text file operations");
+    puts("6. Exit to main menu");
 
     scanf("%d", &option);
 
@@ -156,6 +158,8 @@ void textFiles(){
     } else if (option == 4) {
         showContent();
     } else if (option == 5) {
+        getTextFileHelp();
+    } else if (option == 6) {
         return;
     }
 }
