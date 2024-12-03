@@ -12,10 +12,12 @@ int main() {
     int menu;  // Variable to store the user's menu selection
     int c;     // Variable for clearing input buffer
 
+    // Print welcome Message
+    printf("\nWelcome to the file management system\n");
+
     // Infinite loop for continuously displaying the menu until the user exits
     while (1) {
         // Display the menu options to the user
-        printf("\nWelcome to the file management system\n");
         printf("Please enter what command you want to run\n");
         printf("1 - createFile\n");
         printf("2 - copyFile\n");
@@ -29,7 +31,7 @@ int main() {
         scanf("%d", &menu);
 
         // Clear the input buffer to prevent issues with subsequent input
-        c = NULL;  // Reset the variable
+        c = "";  // Reset the variable
         while ((c = getchar()) != '\n' && c != EOF); // Consume all leftover characters in stdin
 
         // Print the user's menu selection for confirmation
@@ -59,7 +61,8 @@ int main() {
         }
         else {
             // Inform the user if they entered an invalid option
-            printf("\nPlease Enter a Valid Input\n");
+            printf("\nInvalid Input\n");
         }
+
     }
 }
