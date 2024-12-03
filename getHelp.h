@@ -7,7 +7,8 @@
 
 void getHelp(){
     int help;  // Variable to store the user's menu selection
-    int c;     // Variable for clearing input buffer
+    // int c;     // Variable for clearing input buffer
+    char* c = "";  // If it's a string
 
 
     // Infinite loop for continuously displaying the menu until the user exits
@@ -25,7 +26,8 @@ void getHelp(){
         scanf("%d", &help);
 
         // Clear the input buffer to prevent issues with subsequent input
-        c = NULL;  // Reset the variable
+        // c = NULL;  // Reset the variable
+        c = 0;
         while ((c = getchar()) != '\n' && c != EOF); // Consume all leftover characters in stdin
 
         // Print the user's menu selection for confirmation
