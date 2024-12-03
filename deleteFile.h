@@ -12,7 +12,7 @@ void deleteFile(){
     printf("\nWhat is the name of the file to delete: ");
     scanf("%s", fileName);
 
-    // checking for success or which error occured
+    // checking for success or which error occurred
     if(remove(fileName)==0){
         printf("\n%s successfully removed", fileName);
     } else if (errno == ENOENT) {
@@ -22,7 +22,7 @@ void deleteFile(){
     } else if (errno == EPERM) {
         printf("\nOperation not permitted");
     } else {
-        printf("\nUnknown error occured");
+        printf("\nUnknown error occurred");
     }
 }
 

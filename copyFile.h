@@ -3,41 +3,47 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
-void copyFile(){
+void copyFile() {
     char fileName[50];
     char copyFile[50];
-    char *temp;
-    char *readChar;
-    int charsInLine=256;
-    FILE* fptr;
-    FILE* fptrCopy;
+    char readChar[256]; // Allocate space for reading lines
+    FILE* fptr = NULL;
+    FILE* fptrCopy = NULL;
 
-
-    printf("Please type the name of file to be copied: ");
+    printf("Please type the name of the file to be copied: ");
     scanf("%s", fileName);
 
-    printf("Please enter name of destination file: ");
+    // Try opening the source file
+    fptr = fopen(fileName, "r");
+    if (fptr == NULL) {
+        printf("Error: Source file '%s' does not exist\n", fileName);
+        return;
+    }
+
+    printf("Please enter the name of the destination file: ");
     scanf("%s", copyFile);
 
-    printf("%s, %s", fileName, copyFile);
 
-
-    fptr = fopen(fileName, "r");
-
-    if (fptr != NULL){
-        puts("Copying file");
-        fptrCopy = fopen(copyFile, "w");
-        while(fgets(readChar, charsInLine, fptr)){
-            fprintf(fptrCopy,"%s",readChar);
-        }
+    // Try opening the destination file
+    fptrCopy = fopen(copyFile, "w");
+    if (fptrCopy == NULL) {
+        printf("Error: Unable to create or open destination file '%s'.\n", copyFile);
+        fclose(fptr); // Close the source file before exiting
+        return;
     }
-    else{
-        puts("File does not exist please create the file first");
+
+    // Copy content from source to destination
+    printf("Copying content from '%s' to '%s'.\n", fileName, copyFile);
+    while (fgets(readChar, sizeof(readChar), fptr)) {
+        fputs(readChar, fptrCopy);
     }
+
+    // Close the files
     fclose(fptr);
-    fclose(fptrCopy); 
+    fclose(fptrCopy);
+
+    printf("File copy operation completed successfully.\n");
 }
 
 #endif
