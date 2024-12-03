@@ -41,7 +41,7 @@ void getTextFileHelp(){
             printf("Remove Text: Overwrites the text file until it is empty");
         }
         else if (help == 4) {
-            printf("Show Content: Show the text in a file in pages ");
+            printf("Show Content: Displays the text content of a file in numbered pages ");
         }
         else if (help == 5) {
             return;       // Return to Main Menu

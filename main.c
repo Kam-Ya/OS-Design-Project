@@ -25,9 +25,9 @@ int main() {
         printf("3 - deleteFile\n");
         printf("4 - moveFile\n");
         printf("5 - renameFile\n");
-        printf("6 - to manipulate a text file\n");
-        printf("7 - to get help on the above commands\n");
-        printf("8 - to exit\n");
+        printf("6 - Manipulate a text file\n");
+        printf("7 - Get help on the above commands\n");
+        printf("8 - End Program\n");
 
         // Read the user's menu selection
         scanf("%d", &menu);
