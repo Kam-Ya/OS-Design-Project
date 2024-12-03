@@ -11,9 +11,7 @@
 
 int main() {
     int menu;  // Variable to store the user's menu selection
-    // int c;     // Variable for clearing input buffer
-    char *c = "";  // If it's a string
-
+    int c;     // Variable for clearing input buffer
 
     // Print welcome Message
     printf("\nWelcome to the file management system\n");
@@ -35,7 +33,7 @@ int main() {
         scanf("%d", &menu);
 
         // Clear the input buffer to prevent issues with subsequent input
-        c = "";  // Reset the variable
+        c = 0;  // Reset the variable
         while ((c = getchar()) != '\n' && c != EOF); // Consume all leftover characters in stdin
 
         // Print the user's menu selection for confirmation
