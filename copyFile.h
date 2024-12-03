@@ -5,6 +5,7 @@
 #include <stdlib.h>
 
 void copyFile() {
+    // Variables
     char fileName[50];
     char copyFile[50];
     char readChar[256]; // Allocate space for reading lines

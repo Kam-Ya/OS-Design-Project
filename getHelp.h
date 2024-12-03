@@ -21,7 +21,7 @@ void getHelp(){
         printf("5 - renameFile\n");
         printf("6 - to exit\n");
 
-        // Read the user's menu selection
+        // Get menu choice
         scanf("%d", &help);
 
         // Clear the input buffer to prevent issues with subsequent input

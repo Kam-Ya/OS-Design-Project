@@ -9,6 +9,7 @@
 void deleteFile(){
     char fileName[50];
 
+    // Get file name from user
     printf("\nWhat is the name of the file to delete: ");
     scanf("%s", fileName);
 

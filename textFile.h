@@ -23,8 +23,10 @@ void appendText(){
 
     // Checks file exists
     if (fptr){
+        // closes file and reopens it in append mode
         fclose(fptr);
         fptr = fopen(fileName, "a");
+
         // Gets new text from user
         puts("Please add up to 1024 characters to append, press enter to finish");
         scanf("%s", addText);
@@ -127,7 +129,7 @@ void removeText() {
 
     puts("You have selected to Remove Text");
 
-    // Prompt user to enter the file name
+    // Get file name
     puts("Please type the name of your file");
     scanf("%s", fileName);
 
@@ -161,17 +163,19 @@ void showContent() {
     FILE* fptr;
 
     puts("You have selected to Show Content");
+
+    // Gets file to show the content of
     puts("Please type the name of your file:");
     scanf("%s", fileName);
 
-    // Open file in read mode
+    // Open file in read mode to check it exists
     fptr = fopen(fileName, "r");
     if (fptr == NULL) {
         printf("Error: File '%s' does not exist. Please create the file first.\n", fileName);
         return;
     }
 
-    // Prompt for lines per page
+    // Get lines per page
     printf("Enter the number of lines per page: ");
     if (scanf("%d", &linesPerPage) != 1 || linesPerPage <= 0) {
         printf("Error: Invalid input for lines per page.\n");
@@ -190,7 +194,7 @@ void showContent() {
     int totalPages = (totalLines + linesPerPage - 1) / linesPerPage;
     printf("The file has %d lines, which equals %d pages with %d lines per page.\n", totalLines, totalPages, linesPerPage);
 
-    // Prompt for page range
+    // Get page range to display
     printf("Enter the start and end page numbers to display (e.g., 2 3): ");
     if (scanf("%d %d", &startPage, &endPage) != 2 || startPage < 1 || endPage < startPage || endPage > totalPages) {
         printf("Error: Invalid page range.\n");
@@ -209,7 +213,7 @@ void showContent() {
         if (currentPage >= startPage && currentPage <= endPage) {
             // Print the page header when a new page starts (only on the first line of the page)
             if (currentLine == 0) {
-                printf("\n----------(%d)----------\n", currentPage);  // Display the current page number
+                printf("----------(%d)----------\n", currentPage);  // Display the current page number
             }
 
             // Print the current line of text

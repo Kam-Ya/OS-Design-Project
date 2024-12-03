@@ -5,10 +5,12 @@
 #include <errno.h>
 
 void move() {
+    //Variables
     char from[50];
     char to[50];
     FILE* file;
 
+    // Get file name from user
     printf("Enter the name of the file you want to move: ");
     scanf("%s", from);
 

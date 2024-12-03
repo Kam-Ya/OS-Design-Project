@@ -20,7 +20,7 @@ void getTextFileHelp(){
         puts("4. Show Content in File");
         puts("5. Exit to main menu");
 
-        // Read the user's menu selection
+        // Get menu selection
         scanf("%d", &help);
 
         // Clear the input buffer to prevent issues with subsequent input

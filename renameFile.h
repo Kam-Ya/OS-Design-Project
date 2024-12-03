@@ -5,6 +5,7 @@
 #include <stdlib.h>
 
 void renameFile() {
+    //Variables
     char oldName[58];
     char newName[50];
     FILE* file;
