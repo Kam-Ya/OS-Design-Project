@@ -13,6 +13,7 @@ void getHelp(){
     // Infinite loop for continuously displaying the menu until the user exits
     while (1) {
         // Display the menu options to the user
+        printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
         printf("\nWhich Command would you like help with?\n");
         printf("1 - createFile\n");
         printf("2 - copyFile\n");
@@ -20,6 +21,7 @@ void getHelp(){
         printf("4 - moveFile\n");
         printf("5 - renameFile\n");
         printf("6 - to exit\n");
+        printf("Enter your choice: ");
 
         // Get menu choice
         scanf("%d", &help);

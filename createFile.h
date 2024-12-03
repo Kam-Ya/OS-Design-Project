@@ -1,5 +1,6 @@
 #ifndef CREATEFILE_H
 #define CREATEFILE_H
+#define MAX_FILENAME_LENGTH 50
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -7,7 +8,7 @@
 
 // Function to create a file
 void createFile() {
-    char fileName[50];
+    char fileName[MAX_FILENAME_LENGTH];
 
     // Get file name from user
     puts("What is the name of your file: ");
@@ -26,8 +27,8 @@ void createFile() {
     // Attempt to create a new file
     fptr = fopen(fileName, "w+");
     if (fptr == NULL) { // If the file creation fails
-        printf("\nFile failed to create, exiting program.\n");
-        exit(0); // Exit the program with an error
+        printf("\nFile failed to create, exiting to main menu.\n");
+        return; // Return to main loop
     } else { // If the file is created
         printf("\nThe file is created successfully with name %s \n", fileName);
         fclose(fptr); // Close the file

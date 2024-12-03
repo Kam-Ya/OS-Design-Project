@@ -1,13 +1,15 @@
 #ifndef RENAMEFILE_H
 #define RENAMEFILE_H
+#define MAX_FILENAME_LENGTH 50
+
 
 #include <stdio.h>
 #include <stdlib.h>
 
 void renameFile() {
     //Variables
-    char oldName[58];
-    char newName[50];
+    char oldName[MAX_FILENAME_LENGTH];
+    char newName[MAX_FILENAME_LENGTH];
     FILE* file;
 
     // Gets name of old file

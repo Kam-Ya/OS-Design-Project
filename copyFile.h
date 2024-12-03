@@ -1,14 +1,16 @@
 #ifndef COPYFILE_H
 #define COPYFILE_H
+#define MAX_FILENAME_LENGTH 50
+#define MAX_READ_LENGTH 256
 
 #include <stdio.h>
 #include <stdlib.h>
 
 void copyFile() {
     // Variables
-    char fileName[50];
-    char copyFile[50];
-    char readChar[256]; // Allocate space for reading lines
+    char fileName[MAX_FILENAME_LENGTH];
+    char copyFile[MAX_FILENAME_LENGTH];
+    char readChar[MAX_READ_LENGTH]; // Allocate space for reading lines
     FILE* fptr = NULL;
     FILE* fptrCopy = NULL;
 

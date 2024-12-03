@@ -19,6 +19,7 @@ int main() {
     // Infinite loop for continuously displaying the menu until the user exits
     while (1) {
         // Display the menu options to the user
+        printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
         printf("Please enter what command you want to run\n");
         printf("1 - createFile\n");
         printf("2 - copyFile\n");
@@ -28,6 +29,7 @@ int main() {
         printf("6 - Manipulate a text file\n");
         printf("7 - Get help on the above commands\n");
         printf("8 - End Program\n");
+        printf("Enter your choice: ");
 
         // Read the user's menu selection
         scanf("%d", &menu);

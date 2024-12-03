@@ -1,5 +1,9 @@
 #ifndef TEXTFILE_H
 #define TEXTFILE_H
+#define MAX_FILENAME_LENGTH 50
+#define MAX_READ_LENGTH 256
+#define MAX_TEXT_LENGTH 1025
+
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -8,14 +12,16 @@
 
 void appendText(){
     // Variables
-    char fileName[50];
-    char addText[1025];
+    char fileName[MAX_FILENAME_LENGTH];
+    char addText[MAX_TEXT_LENGTH];
     FILE* fptr;
 
+    printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
     printf("You have selected to Append Text\n");
 
     // Gets file name from user
     printf("Please type the name of your file: ");
+    printf("Enter your choice: ");
     scanf("%s", fileName);
 
     // Opens file in read mode
@@ -25,7 +31,7 @@ void appendText(){
     if (fptr){
         // closes file and reopens it in append mode
         fclose(fptr);
-        fptr = fopen(fileName, "a");
+        fptr = fopen(fileName, "a"); // Open file in append mode
 
         // Gets new text from user
         puts("Please add up to 1024 characters to append, press enter to finish");
@@ -43,13 +49,13 @@ void appendText(){
 
 void insertText(){
     // Variables
-    char fileName[50];
-    char readchar[50];
-    char insert[1024];
+    char fileName[MAX_FILENAME_LENGTH];
+    char readchar[MAX_FILENAME_LENGTH];
+    char insert[MAX_TEXT_LENGTH];
     int position;
     FILE* fptr;
 
-
+    printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
     puts("You have selected to Insert Text");
 
     // Get file name
@@ -73,13 +79,13 @@ void insertText(){
         FILE *temp2 = fopen("Warendures.txt", "w+");    // Temp file for content after the insertion point
 
         // Read and write content up to the insertion point to `temp`
-        fgets(readchar, position, fptr);
+        fgets(readchar, position, fptr); // Read up to the insertion point
         fprintf(temp, "%s", readchar);
         fclose(temp);
 
         // Write the remaining content to `temp2`
-        while (fgets(readchar, 50, fptr)) {
-            fprintf(temp2, "%s", readchar);
+        while (fgets(readchar, MAX_FILENAME_LENGTH, fptr)) {
+            fprintf(temp2, "%s", readchar); // Write the remaining content to `temp2`
         }
         fclose(temp2);
         fclose(fptr);
@@ -95,7 +101,7 @@ void insertText(){
         temp = fopen("callmeIshmael.txt", "r");
 
         // Write content from `temp` (before insertion point) back to the file
-        while (fgets(readchar, 50, temp)) {
+        while (fgets(readchar, 50, temp)) { // Read content from `temp` and write it back to the file
             fprintf(fptr, "%s", readchar);
         }
 
@@ -103,7 +109,7 @@ void insertText(){
         fprintf(fptr, "%s", insert);
 
         // Write content from `temp2` (after insertion point) back to the file
-        while (fgets(readchar, 50, temp2)) {
+        while (fgets(readchar, 50, temp2)) { // Read content from `temp2` and write it back to the file
             fprintf(fptr, "%s", readchar);
         }
 
@@ -124,9 +130,10 @@ void insertText(){
 
 void removeText() {
     //Variables
-    char fileName[50];
+    char fileName[MAX_FILENAME_LENGTH];
     FILE* fptr;
 
+    printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
     puts("You have selected to Remove Text");
 
     // Get file name
@@ -153,15 +160,16 @@ void removeText() {
 // Method to show content of a file in pages
 void showContent() {
     //variables
-    char fileName[50];
+    char fileName[MAX_FILENAME_LENGTH];
     int linesPerPage;
     int startPage, endPage;
     int currentLine = 0, currentPage = 1;
-    char readChars[256];
-    int charsInLine = 256;
+    char readChars[MAX_READ_LENGTH];
+    int charsInLine = MAX_READ_LENGTH;
 
     FILE* fptr;
 
+    printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
     puts("You have selected to Show Content");
 
     // Gets file to show the content of
@@ -246,6 +254,7 @@ void textFiles(){
     int option;
 
     // Displays menu
+    printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
     puts("\nYou have selected text file management, please select one of the following actions:");
     puts("1. Append Text to File");
     puts("2. Insert Text in File");
@@ -253,7 +262,7 @@ void textFiles(){
     puts("4. Show Content in File");
     puts("5. Get help for text file operations");
     puts("6. Exit to main menu");
-
+    printf("Enter your choice: ");
     // Scan in input
     scanf("%d", &option);
 

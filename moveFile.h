@@ -1,13 +1,15 @@
 #ifndef MOVEFILE_H
 #define MOVEFILE_H
+#define MAX_FILENAME_LENGTH 50
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <errno.h>
 
 void move() {
     //Variables
-    char from[50];
-    char to[50];
+    char from[MAX_FILENAME_LENGTH];
+    char to[MAX_FILENAME_LENGTH];
     FILE* file;
 
     // Get file name from user
@@ -25,7 +27,7 @@ void move() {
     printf("Enter the name of the files destination: ");
     scanf("%s", to);
     
-    rename(from, to);
+    rename(from, to); // Move the file
 }
 
 #endif
