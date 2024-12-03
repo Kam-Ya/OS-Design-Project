@@ -7,6 +7,7 @@
 #include "moveFile.h"           // Header file for the moveFile function
 #include "renameFile.h"         // Header file for the renameFile function
 #include "textFile.h"           // Header file for the textFiles functions
+#include "getHelp.h"            // Header file for the getHelp functions
 
 int main() {
     int menu;  // Variable to store the user's menu selection
@@ -25,7 +26,8 @@ int main() {
         printf("4 - moveFile\n");
         printf("5 - renameFile\n");
         printf("6 - to manipulate a text file\n");
-        printf("7 - to exit\n");
+        printf("7 - to get help on the above commands\n");
+        printf("8 - to exit\n");
 
         // Read the user's menu selection
         scanf("%d", &menu);
@@ -57,12 +59,14 @@ int main() {
             textFiles();   // Call the textFiles functions
         }
         else if (menu == 7) {
+            getHelp();       // Call the getHelp function
+        }
+        else if (menu == 8) {
             exit(0);       // Exit the program
         }
         else {
             // Inform the user if they entered an invalid option
             printf("\nInvalid Input\n");
         }
-
     }
 }
